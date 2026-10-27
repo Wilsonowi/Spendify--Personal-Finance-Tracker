@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: spendify
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/spendify}
+    username: ${POSTGRES_USER:spendify}
+    password: ${POSTGRES_PASSWORD:spendify-local}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+  session:
+    jdbc:
+      initialize-schema: always
+    timeout: 8h
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 200MB
+  ai:
+    model:
+      chat: ${SPENDIFY_AI_MODEL:none}
+    google:
+      genai:
+        api-key: ${GOOGLE_API_KEY:}
+        chat:
+          model: gemini-2.5-flash-lite
+          temperature: 0.1
+
+server:
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: ${COOKIE_SECURE:false}
+        same-site: lax
+  forward-headers-strategy: framework
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+spendify:
+  storage:
+    endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+    access-key: ${MINIO_ROOT_USER:spendify-local}
+    secret-key: ${MINIO_ROOT_PASSWORD:spendify-local-password}
+    bucket: ${MINIO_BUCKET:spendify-documents}
+    master-key-base64: ${SPENDIFY_MASTER_KEY_BASE64:}
+  ocr:
+    base-url: ${OCR_BASE_URL:http://localhost:8090}
+    enabled: ${OCR_ENABLED:true}
+  ai-enabled: ${SPENDIFY_AI_ENABLED:false}
+

@@ -1,0 +1,23 @@
+[
+  {
+    "file": "public-bank-tng-topup.png",
+    "provider": "PUBLIC_BANK",
+    "direction": "DEBIT",
+    "amount": 100.00,
+    "reference": "PB-TNG-7812"
+  },
+  {
+    "file": "tng-topup-credit.png",
+    "provider": "TNG",
+    "direction": "CREDIT",
+    "amount": 100.00,
+    "reference": "TNG-7812"
+  },
+  {
+    "file": "tng-chicken-rice-payment.png",
+    "provider": "TNG",
+    "direction": "DEBIT",
+    "amount": 12.50,
+    "merchant": "X001 DAVIDS CHICK"
+  }
+]

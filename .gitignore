@@ -1,0 +1,33 @@
+# Secrets and private data
+.env
+.env.*
+!.env.example
+private-data/
+personal-fixtures/
+*.pem
+*.key
+
+# Java
+backend/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/playwright-report/
+frontend/test-results/
+
+# Python
+ocr-service/.venv/
+ocr-service/__pycache__/
+ocr-service/.pytest_cache/
+*.pyc
+
+# Local services and tooling
+.tools/
+.data/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
