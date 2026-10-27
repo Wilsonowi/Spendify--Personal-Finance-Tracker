@@ -117,6 +117,7 @@ public class SlipParser {
             Matcher matcher = pattern.matcher(lines[index]);
             if (!matcher.matches()) continue;
             String value = matcher.group(1).trim();
+            if (!value.isBlank() && (pattern == DATE || pattern == REFERENCE)) return value;
             for (int next = index + 1, used = 0; value.isBlank() || used < continuationLines;
                  next++, used++) {
                 if (next >= lines.length) break;
