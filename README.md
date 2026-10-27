@@ -65,7 +65,7 @@ separate as an internal transfer.
 The preserved slip workflow separately verifies private OCR, manual correction,
 owner-scoped document access, ambiguous transfer review, and safe CSV export.
 
-▶️ [Watch the synthetic end-to-end demonstration](docs/demo/spendify-real-demo.webm)
+
 
 <p align="center">
   <img src="docs/screenshots/import-review-real-mobile.png"
